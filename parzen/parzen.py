@@ -62,8 +62,9 @@ def parzenMultivariadoProduto(features, pdMatriz, arrayH):
             produto = produto * kernel
         soma = soma + produto
     
-    # @TODO verificar como dividir pelo H de cada dimensão... aqui está dividindo apenas pelo primeiro H 
-    resultado = (1.0/n) * (1.0/arrayH[0]) * soma  
+    # dividido pela media do H
+    
+    resultado = (1.0/n) * (1.0/np.mean(arrayH)) * soma  
     return resultado
 
 
@@ -107,6 +108,8 @@ def graficoParzen(pdMatriz, coluna, arrayH):
 
 def testeGraficoParzen(indiceColuna, pdMatriz):
     arrayH = encontrarHDimensoes(pdMatriz)
+    print("H (janelas) = \n" + str(arrayH))
+    print("Média H = " + str(np.mean(arrayH))
     graficoParzen(pdMatriz, indiceColuna, arrayH)
     print("---------------------------------------")
     print("Coluna " + str(indiceColuna) + " \n---------------------------------------")
