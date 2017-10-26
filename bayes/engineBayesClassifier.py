@@ -36,5 +36,17 @@ def probabilidadeCondicional(dadosTreino,entrada):
     #calculo da densidade de probabilidade condicional
     probCondicional = equacaoProbabilidade(entrada,quantidadeElementosTreino,vetorMedia,vetorLambda)
     return probCondicional
+##calcula a probabilidade de cada classe (Correspondente a frequencia de cada classe no treinamento)
 
+
+###em construção
+def probCondicionalMultiplos(dadosTreino,entrada):
+    ##quantidade de dimensões do problema
+    quantidadeElementosTreino = len(dadosTreino[0])
+    ##pegando os vetores de media e lamba - treinamento
+    vetorMedia = calcularMediaSetosa(dadosTreino)
+    vetorLambda = calcularVariancia(dadosTreino)
+    #calculo da densidade de probabilidade condicional
+    probCondicional = equacaoProbabilidade(entrada,quantidadeElementosTreino,vetorMedia,vetorLambda)
+    return probCondicional
 ##calcula a probabilidade de cada classe (Correspondente a frequencia de cada classe no treinamento)
